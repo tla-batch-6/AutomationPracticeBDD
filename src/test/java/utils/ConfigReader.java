@@ -10,7 +10,7 @@ public class ConfigReader {
     public static String readProperty(String property){
         Properties prop = null;
         try{
-            FileInputStream fileInput = new FileInputStream("configuration.properties");
+            FileInputStream fileInput = new FileInputStream("config.properties");
             prop = new Properties();
             prop.load(fileInput);
         }catch (FileNotFoundException e){

@@ -4,15 +4,18 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.HomePage;
 import utils.BrowserUtils;
 
 public class HomeSteps {
+    HomePage page;
+    public HomeSteps(){
+        page = new HomePage();
+    }
 
     @Given("I open url of homepage")
     public void iOpenUrlOfHomepage() {
         System.out.println("opened homepage");
-        BrowserUtils.getDriver().getTitle();
-        BrowserUtils.getDriver().close();
     }
 
     @When("I capture text of the header")
@@ -23,6 +26,8 @@ public class HomeSteps {
     @Then("Verify header text is Automation with Selenium")
     public void verify_header_text_is_automation_with_selenium() {
         System.out.println("Verified header is Automation with Selenium");
+        BrowserUtils.assertEquals(page.headerTitle.getText(), "Automation with Selenium");
+        BrowserUtils.closeDriver();
     }
 
     @Then("Verify button Home is displayed")

@@ -55,6 +55,7 @@ public class BrowserUtils {
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.get(ConfigReader.readProperty("url"));
     }
 
     public static void waitForElementClickability(WebElement element){
@@ -98,7 +99,7 @@ public class BrowserUtils {
         }
     }
 
-    public void sendKeys(WebElement element, String inputText){
+    public static void sendKeys(WebElement element, String inputText){
         //TODO: apply report -> logInfo("Entered the text ", element);
         waitForElementVisibility(element);
         moveIntoView(element);
@@ -106,7 +107,7 @@ public class BrowserUtils {
         element.sendKeys(inputText);
     }
 
-    public String getText(WebElement element){
+    public static String getText(WebElement element){
         //TODO: apply report -> logInfo("Retrieved the text ", element);
         waitForElementVisibility(element);
         moveIntoView(element);
@@ -114,7 +115,7 @@ public class BrowserUtils {
         return element.getText();
     }
 
-    public void click(WebElement element){
+    public static void click(WebElement element){
         //TODO: apply report -> logInfo("clicked the button ", element);
         waitForElementClickability(element);
         moveIntoView(element);
@@ -122,7 +123,7 @@ public class BrowserUtils {
         element.click();
     }
 
-    public void assertEquals(String actual, String expected){
+    public static void assertEquals(String actual, String expected){
         //TODO: apply report -> logInfo("Expected: " + expected);
         //TODO: apply report -> logInfo("Actual: " + actual);
         Assert.assertEquals(expected, actual);
