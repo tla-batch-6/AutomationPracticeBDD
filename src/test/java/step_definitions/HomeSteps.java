@@ -40,4 +40,9 @@ public class HomeSteps {
         System.out.println("Clicked on Others page button");
     }
 
+    @When("I click a button Calendar")
+    public void i_click_a_button_calendar() {
+        System.out.println("clicked a button Calendar");
+    }
+
 }
