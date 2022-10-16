@@ -1,6 +1,7 @@
 package step_definitions;
 
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class OthersSteps {
 

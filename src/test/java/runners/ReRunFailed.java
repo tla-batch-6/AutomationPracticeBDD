@@ -8,14 +8,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "html:target/report.html",
-                "rerun:target/rerun.txt"
+                "html:target/report.html"
         },
-        features = "src/test/resources/features",
+        features = "@target/rerun.txt",
         glue = "step_definitions",
-        stepNotifications = true,
-        dryRun = false
-        ,tags = "@regression or @smoke"
+        stepNotifications = true
 )
-public class CukesRunner {
+public class ReRunFailed {
 }
