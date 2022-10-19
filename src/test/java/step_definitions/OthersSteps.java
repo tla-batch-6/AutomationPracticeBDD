@@ -15,6 +15,5 @@ public class OthersSteps {
     @Then("Verify buttons is disabled")
     public void verify_buttons_is_disabled() {
         BrowserUtils.assertTrue(BrowserUtils.isDisabled(page.statusBtn));
-        BrowserUtils.closeDriver();
     }
 }

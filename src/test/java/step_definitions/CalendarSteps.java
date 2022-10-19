@@ -42,6 +42,5 @@ public class CalendarSteps {
         String actualTxt = BrowserUtils.getText(page.numberOfDaysTxt);
 
         BrowserUtils.assertEquals(expectedTxt, actualTxt);
-        BrowserUtils.closeDriver();
     }
 }

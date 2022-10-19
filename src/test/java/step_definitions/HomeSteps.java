@@ -21,7 +21,6 @@ public class HomeSteps {
     @Then("Verify header text is Automation with Selenium")
     public void verify_header_text_is_automation_with_selenium() {
         BrowserUtils.assertEquals(page.headerTitle.getText(), "Automation with Selenium");
-        BrowserUtils.closeDriver();
     }
 
     @Then("Verify button Home is displayed")
@@ -42,7 +41,6 @@ public class HomeSteps {
     @Then("Verify button Others is displayed")
     public void verify_button_others_is_displayed() {
         System.out.println("Tested Others button is displayed");
-        BrowserUtils.closeDriver();
     }
 
     @When("I click a button Others")
@@ -54,5 +52,11 @@ public class HomeSteps {
     public void i_click_a_button_calendar() {
         BrowserUtils.click(page.calendarBtn);
     }
+
+    @When("I click a button User-Mgt")
+    public void iClickAButtonUserMgt() {
+        BrowserUtils.click(page.userMgtBtn);
+    }
+
 
 }
