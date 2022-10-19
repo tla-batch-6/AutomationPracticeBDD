@@ -10,22 +10,16 @@ import utils.BrowserUtils;
 public class HomeSteps {
     HomePage page;
     public HomeSteps(){
-        page = new HomePage();
+        this.page = new HomePage();
     }
 
     @Given("I open url of homepage")
     public void iOpenUrlOfHomepage() {
-        System.out.println("opened homepage");
-    }
-
-    @When("I capture text of the header")
-    public void i_capture_text_of_the_header() {
-        System.out.println("capture header on home page");
+        BrowserUtils.getDriver();
     }
 
     @Then("Verify header text is Automation with Selenium")
     public void verify_header_text_is_automation_with_selenium() {
-        System.out.println("Verified header is Automation with Selenium");
         BrowserUtils.assertEquals(page.headerTitle.getText(), "Automation with Selenium");
         BrowserUtils.closeDriver();
     }
@@ -48,6 +42,7 @@ public class HomeSteps {
     @Then("Verify button Others is displayed")
     public void verify_button_others_is_displayed() {
         System.out.println("Tested Others button is displayed");
+        BrowserUtils.closeDriver();
     }
 
     @When("I click a button Others")
@@ -57,7 +52,7 @@ public class HomeSteps {
 
     @When("I click a button Calendar")
     public void i_click_a_button_calendar() {
-        System.out.println("clicked a button Calendar");
+        BrowserUtils.click(page.calendarBtn);
     }
 
 }
