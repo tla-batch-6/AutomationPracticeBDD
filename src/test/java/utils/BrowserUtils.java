@@ -129,6 +129,16 @@ public class BrowserUtils {
         Assert.assertEquals(expected, actual);
     }
 
+    public static void assertFalse(boolean result){
+        //TODO: apply report -> logInfo("Expected: " + result);
+        Assert.assertFalse(result);
+    }
+
+    public static void assertTrue(boolean result){
+        //TODO: apply report -> logInfo("Expected: " + result);
+        Assert.assertTrue(result);
+    }
+
     public static boolean isDisplayed(WebElement element){
         waitForElementVisibility(element);
         moveIntoView(element);
@@ -141,6 +151,17 @@ public class BrowserUtils {
         moveIntoView(element);
         highlightElement(element);
         return element.isEnabled();
+    }
+
+    public static boolean isDisabled(WebElement element){
+        moveIntoView(element);
+        highlightElement(element);
+
+        if(element.isEnabled()){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public static void switchToNewWindow(WebDriver driver){

@@ -2,13 +2,19 @@ package step_definitions;
 
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import pages.OthersPage;
 import utils.BrowserUtils;
 
 public class OthersSteps {
+    OthersPage page;
+
+    public OthersSteps(){
+        page = new OthersPage();
+    }
 
     @Then("Verify buttons is disabled")
     public void verify_buttons_is_disabled() {
-        System.out.println("Verified button is disabled");
+        BrowserUtils.assertTrue(BrowserUtils.isDisabled(page.statusBtn));
         BrowserUtils.closeDriver();
     }
 }
