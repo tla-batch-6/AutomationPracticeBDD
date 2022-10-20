@@ -10,7 +10,7 @@ import utils.BrowserUtils;
 public class HomeSteps {
     HomePage page;
     public HomeSteps(){
-        this.page = new HomePage();
+        page = new HomePage();
     }
 
     @Given("I open url of homepage")
@@ -58,5 +58,8 @@ public class HomeSteps {
         BrowserUtils.click(page.userMgtBtn);
     }
 
-
+    @When("I click a button Pop-Up")
+    public void iClickAButtonPopUp() {
+        BrowserUtils.click(page.popUpBtn);
+    }
 }

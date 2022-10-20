@@ -8,7 +8,8 @@ public class Hooks {
 
     @Before
     public void setUp(){
-
+        //initialized the driver object to open the browser
+        BrowserUtils.getDriver();
     }
 
     @After

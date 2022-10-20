@@ -5,7 +5,7 @@ Feature: Home page tests
     Given I open url of homepage
     Then Verify header text is Automation with Selenium
 
-    @US1022 @regression @smoke
+  @US1022 @regression @smoke
   Scenario: Test nav buttons are displayed
     Given I open url of homepage
     Then Verify button Home is displayed
