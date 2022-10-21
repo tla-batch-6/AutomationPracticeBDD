@@ -2,10 +2,12 @@ package step_definitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import pages.CalendarPage;
+import pages.CommonPage;
 import utils.BrowserUtils;
 
-public class CalendarSteps {
+public class CalendarSteps implements CommonPage {
     CalendarPage page;
 
     public CalendarSteps(){
@@ -24,7 +26,11 @@ public class CalendarSteps {
 
     @When("I click a button Submit")
     public void i_click_a_button_submit() {
-        BrowserUtils.click(page.submitBtn);
+        BrowserUtils.click(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_BUTTON, "Submit"))
+                )
+        );
     }
 
     @Then("text will display {int} day difference")
