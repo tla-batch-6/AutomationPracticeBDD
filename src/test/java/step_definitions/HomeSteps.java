@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import pages.CommonPage;
 import pages.HomePage;
 import utils.BrowserUtils;
@@ -26,57 +27,91 @@ public class HomeSteps implements CommonPage {
 
     @Then("Verify button Home is displayed")
     public void verify_button_home_is_displayed() {
-        BrowserUtils.isEnabled(page.homeLinkText);
+        //BrowserUtils.isEnabled(page.homeLinkText);
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Home")))
+        );
     }
 
     @Then("Verify button Calendar is displayed")
     public void verify_button_calendar_is_displayed() {
-        BrowserUtils.isEnabled(page.calendarBtn);
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Calendar")))
+        );
     }
 
     @Then("Verify button UserMgt is displayed")
     public void verify_button_user_mgt_is_displayed() {
-        BrowserUtils.isEnabled(page.userMgtBtn);
-    }
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "User-Mgt")))
+        );    }
 
     @Then("Verify button Others is displayed")
     public void verify_button_others_is_displayed() {
-        BrowserUtils.isEnabled(page.othersBtn);
-    }
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Others")))
+        );    }
 
     @Then("Verify button Tables is displayed")
     public void verifyButtonTablesIsDisplayed() {
-        BrowserUtils.isEnabled(page.tablesLinkText);
-    }
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Tables")))
+        );    }
 
     @Then("Verify button Synchronization is displayed")
     public void verifyButtonSynchronizationIsDisplayed() {
-        BrowserUtils.isEnabled(page.synchronizationLinkText);
-    }
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Synchronization")))
+        );    }
 
     @Then("Verify button iFrames is displayed")
     public void verifyButtonIFramesIsDisplayed() {
-        BrowserUtils.isEnabled(page.iframesLinkText);
-    }
+        BrowserUtils.isDisplayed(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "iFrames")))
+        );    }
 
     @When("I click a button Others")
     public void i_click_a_button_others() {
-        BrowserUtils.click(page.othersBtn);
+        BrowserUtils.click(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Others")))
+        );
     }
 
     @When("I click a button Calendar")
     public void i_click_a_button_calendar() {
-        BrowserUtils.click(page.calendarBtn);
+        BrowserUtils.click(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Calendar")))
+        );
     }
 
     @When("I click a button User-Mgt")
     public void iClickAButtonUserMgt() {
-        BrowserUtils.click(page.userMgtBtn);
+        BrowserUtils.click(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "User-Mgt")))
+        );
     }
 
     @When("I click a button Pop-Up")
     public void iClickAButtonPopUp() {
-        BrowserUtils.click(page.popUpBtn);
+        BrowserUtils.click(
+                BrowserUtils.getDriver().findElement(
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Pop-Up")))
+        );
     }
 
+    //TODO: Update link text related steps with this new step
+    @Then("Verify link text Home is displayed")
+    public void verifyLinkTextHomeIsDisplayed() {
+
+    }
 }

@@ -15,28 +15,4 @@ public class HomePage {
     @FindBy(id = "title")
     public WebElement headerTitle;
 
-    @FindBy(xpath = "//nav/a[text()='Calendar']")
-    public WebElement calendarBtn;
-
-    @FindBy(xpath = "//nav/a[text()='Others']")
-    public WebElement othersBtn;
-
-    @FindBy(xpath = "//nav/a[text()='User-Mgt']")
-    public WebElement userMgtBtn;
-
-    @FindBy(xpath = "//nav/a[text()='Pop-Up']")
-    public WebElement popUpBtn;
-
-    @FindBy(linkText = "Home")
-    public WebElement homeLinkText;
-
-    @FindBy(linkText = "Tables")
-    public WebElement tablesLinkText;
-
-    @FindBy(linkText = "Synchronization")
-    public WebElement synchronizationLinkText;
-
-    @FindBy(linkText = "iFrames")
-    public WebElement iframesLinkText;
-
 }
