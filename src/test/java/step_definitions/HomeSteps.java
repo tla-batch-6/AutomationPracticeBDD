@@ -4,10 +4,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.CommonPage;
 import pages.HomePage;
 import utils.BrowserUtils;
 
-public class HomeSteps {
+public class HomeSteps implements CommonPage {
     HomePage page;
     public HomeSteps(){
         page = new HomePage();
@@ -25,22 +26,37 @@ public class HomeSteps {
 
     @Then("Verify button Home is displayed")
     public void verify_button_home_is_displayed() {
-        System.out.println("Tested Home button is displayed");
+        BrowserUtils.isEnabled(page.homeLinkText);
     }
 
     @Then("Verify button Calendar is displayed")
     public void verify_button_calendar_is_displayed() {
-        System.out.println("Tested Calendar button is displayed");
+        BrowserUtils.isEnabled(page.calendarBtn);
     }
 
     @Then("Verify button UserMgt is displayed")
     public void verify_button_user_mgt_is_displayed() {
-        System.out.println("Tested UserMgt button is displayed");
+        BrowserUtils.isEnabled(page.userMgtBtn);
     }
 
     @Then("Verify button Others is displayed")
     public void verify_button_others_is_displayed() {
-        System.out.println("Tested Others button is displayed");
+        BrowserUtils.isEnabled(page.othersBtn);
+    }
+
+    @Then("Verify button Tables is displayed")
+    public void verifyButtonTablesIsDisplayed() {
+        BrowserUtils.isEnabled(page.tablesLinkText);
+    }
+
+    @Then("Verify button Synchronization is displayed")
+    public void verifyButtonSynchronizationIsDisplayed() {
+        BrowserUtils.isEnabled(page.synchronizationLinkText);
+    }
+
+    @Then("Verify button iFrames is displayed")
+    public void verifyButtonIFramesIsDisplayed() {
+        BrowserUtils.isEnabled(page.iframesLinkText);
     }
 
     @When("I click a button Others")
@@ -62,4 +78,5 @@ public class HomeSteps {
     public void iClickAButtonPopUp() {
         BrowserUtils.click(page.popUpBtn);
     }
+
 }
