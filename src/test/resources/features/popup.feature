@@ -1,7 +1,7 @@
 Feature: Pop-Up page tests
   Background: Open Pop-Up page
     Given I open url of homepage
-    When I click a button Pop-Up
+    When I click nav button "Pop-Up"
 
   @US801
   Scenario: Verify "New Message" header is displayed

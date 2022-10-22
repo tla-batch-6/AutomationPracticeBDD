@@ -1,7 +1,7 @@
 Feature: Multiple Window page tests
   Background: Open Multiple Window page
     Given I open url of homepage
-    When I click a button Multiple Window
+    When I click nav button "Multiple Window"
 
   @US9001
   Scenario: Verify social media buttons are enabled
