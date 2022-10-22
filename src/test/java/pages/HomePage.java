@@ -15,4 +15,7 @@ public class HomePage {
     @FindBy(id = "title")
     public WebElement headerTitle;
 
+    @FindBy(className = "title")
+    public WebElement someTextTitle;
+
 }

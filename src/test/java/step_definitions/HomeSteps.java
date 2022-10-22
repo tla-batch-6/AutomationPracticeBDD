@@ -3,8 +3,8 @@ package step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.CommonPage;
 import pages.HomePage;
 import utils.BrowserUtils;
@@ -20,62 +20,27 @@ public class HomeSteps implements CommonPage {
         BrowserUtils.getDriver();
     }
 
-    @Then("Verify header text is Automation with Selenium")
-    public void verify_header_text_is_automation_with_selenium() {
-        BrowserUtils.assertEquals(page.headerTitle.getText(), "Automation with Selenium");
+    @Then("Verify header text is {string}")
+    public void verifyHeaderTextIs(String headerTxt) {
+        WebElement element = null;
+
+        switch (headerTxt.toLowerCase()){
+            case "automation with selenium": element = page.headerTitle;
+            break;
+            default:
+                System.out.println("WebElement is not defined");
+        }
+
+        BrowserUtils.assertEquals(element.getText(), headerTxt);
     }
 
-    @Then("Verify button Home is displayed")
-    public void verify_button_home_is_displayed() {
-        //BrowserUtils.isEnabled(page.homeLinkText);
+    @Then("Verify button {string} is displayed")
+    public void verifyButtonIsDisplayed(String button) {
         BrowserUtils.isDisplayed(
                 BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Home")))
+                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, button)))
         );
     }
-
-    @Then("Verify button Calendar is displayed")
-    public void verify_button_calendar_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Calendar")))
-        );
-    }
-
-    @Then("Verify button UserMgt is displayed")
-    public void verify_button_user_mgt_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "User-Mgt")))
-        );    }
-
-    @Then("Verify button Others is displayed")
-    public void verify_button_others_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Others")))
-        );    }
-
-    @Then("Verify button Tables is displayed")
-    public void verifyButtonTablesIsDisplayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Tables")))
-        );    }
-
-    @Then("Verify button Synchronization is displayed")
-    public void verifyButtonSynchronizationIsDisplayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Synchronization")))
-        );    }
-
-    @Then("Verify button iFrames is displayed")
-    public void verifyButtonIFramesIsDisplayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "iFrames")))
-        );    }
 
     @When("I click a button Others")
     public void i_click_a_button_others() {
@@ -122,4 +87,7 @@ public class HomeSteps implements CommonPage {
                         By.xpath(String.format(XPATH_TEMPLATE_LINKTEXT, "Multiple-window")))
         );
     }
+
+
+
 }
