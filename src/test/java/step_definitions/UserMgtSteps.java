@@ -25,36 +25,13 @@ public class UserMgtSteps implements CommonPage {
         BrowserUtils.assertTrue(BrowserUtils.isEnabled(page.loginBtn));
     }
 
-    @Then("Verify First Name input field is displayed")
-    public void verify_first_name_input_field_is_displayed() {
+    @Then("Verify {string} input field is displayed")
+    public void verifyInputFieldIsDisplayed(String inputField) {
         BrowserUtils.isDisplayed(
                 BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, "First Name"))
+                        By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, inputField))
                 )
         );
     }
-    @Then("Verify Last Name input field is displayed")
-    public void verify_last_name_input_field_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, "Last Name"))
-                )
-        );
-    }
-    @Then("Verify Phone Number input field is displayed")
-    public void verify_phone_number_input_field_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, "Phone Number"))
-                )
-        );
-    }
-    @Then("Verify Email input field is displayed")
-    public void verify_email_input_field_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, "E-mail"))
-                )
-        );
-    }
+
 }

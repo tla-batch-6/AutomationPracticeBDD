@@ -7,29 +7,11 @@ import utils.BrowserUtils;
 
 public class MultipleWindowSteps implements CommonPage {
 
-    @Then("Verify link text Launch TLA is displayed")
-    public void verify_link_text_launch_tla_is_displayed() {
+    @Then("Verify link text {string} is displayed")
+    public void verifyLinkTextIsDisplayed(String buttonName) {
         BrowserUtils.isDisplayed(
                 BrowserUtils.getDriver().findElement(By.xpath(
-                        String.format(XPATH_TEMPLATE_LINKTEXT,"Launch TLA")
-                ))
-        );
-    }
-
-    @Then("Verify link text Launch Google is displayed")
-    public void verify_link_text_launch_google_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(By.xpath(
-                        String.format(XPATH_TEMPLATE_LINKTEXT,"Launch Google")
-                ))
-        );
-    }
-
-    @Then("Verify link text Launch Facebook is displayed")
-    public void verify_link_text_launch_facebook_is_displayed() {
-        BrowserUtils.isDisplayed(
-                BrowserUtils.getDriver().findElement(By.xpath(
-                        String.format(XPATH_TEMPLATE_LINKTEXT,"Launch Facebook")
+                        String.format(XPATH_TEMPLATE_LINKTEXT, buttonName)
                 ))
         );
     }
