@@ -8,15 +8,18 @@ import org.openqa.selenium.WebElement;
 import pages.CalendarPage;
 import pages.CommonPage;
 import pages.HomePage;
+import pages.PopUpPage;
 import utils.BrowserUtils;
 
 public class HomeSteps implements CommonPage {
     HomePage page;
     CalendarPage calendarPage;
+    PopUpPage popUpPage;
 
     public HomeSteps() {
         page = new HomePage();
         calendarPage = new CalendarPage();
+        popUpPage = new PopUpPage();
     }
 
     @Given("I open url of homepage")
@@ -61,6 +64,12 @@ public class HomeSteps implements CommonPage {
                 break;
             case "enddatecalendar":
                 BrowserUtils.click(calendarPage.endDateCalendar);
+                break;
+            case "message":
+                BrowserUtils.click(popUpPage.messageBtn);
+                break;
+            case "bmi calculator":
+                BrowserUtils.click(popUpPage.bmiCalcBtn);
                 break;
             default:
                 BrowserUtils.click(BrowserUtils.getDriver().findElement(

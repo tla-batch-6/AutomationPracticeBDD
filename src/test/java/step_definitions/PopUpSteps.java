@@ -12,19 +12,9 @@ public class PopUpSteps {
         page = new PopUpPage();
     }
 
-    @And("I click a button Message")
-    public void iClickAButtonMessage() {
-        BrowserUtils.click(page.messageBtn);
-    }
-
     @Then("Verify header New Message is displayed")
     public void verifyHeaderNewMessageIsDisplayed() {
         BrowserUtils.assertEquals(BrowserUtils.getText(page.headerNewMsg), "New message");
-    }
-
-    @And("I click a button BMI Calculator")
-    public void iClickAButtonBMICalculator() {
-        BrowserUtils.click(page.bmiCalcBtn);
     }
 
     @Then("Verify header BMI Calculator is displayed")
