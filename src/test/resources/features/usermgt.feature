@@ -1,5 +1,6 @@
 @user-mgt
 Feature: User Mgt page scenarios
+
   Background: Navigate to User-Mgt page
     Given I open url of homepage
     When I click nav button "User-Mgt"
@@ -18,3 +19,11 @@ Feature: User Mgt page scenarios
     Then Verify "Last Name" input field is displayed
     Then Verify "Phone Number" input field is displayed
     Then Verify "E-mail" input field is displayed
+
+  @US4004b
+  Scenario: Verify following input fields are displayed on the page 2
+    Then Verify following input fields are displayed:
+      | First Name   |
+      | Last Name    |
+      | Phone Number |
+      | E-mail       |

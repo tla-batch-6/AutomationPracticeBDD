@@ -6,6 +6,8 @@ import pages.CommonPage;
 import pages.UserMgtPage;
 import utils.BrowserUtils;
 
+import java.util.List;
+
 
 public class UserMgtSteps implements CommonPage {
     UserMgtPage page;
@@ -34,4 +36,14 @@ public class UserMgtSteps implements CommonPage {
         );
     }
 
+    @Then("Verify following input fields are displayed:")
+    public void verify_following_input_fields_are_displayed(List<String> dataTable) {
+        for(String each: dataTable){
+            BrowserUtils.isDisplayed(
+                    BrowserUtils.getDriver().findElement(
+                            By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, each))
+                    )
+            );
+        }
+    }
 }
