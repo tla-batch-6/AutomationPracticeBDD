@@ -1,12 +1,14 @@
 package step_definitions;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import pages.CommonPage;
 import pages.UserMgtPage;
 import utils.BrowserUtils;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class UserMgtSteps implements CommonPage {
@@ -44,6 +46,19 @@ public class UserMgtSteps implements CommonPage {
                             By.xpath(String.format(XPATH_TEMPLATE_INPUT_FIELD, each))
                     )
             );
+        }
+    }
+
+    @When("I fill out user registration form with following info:")
+    public void iFillOutUserRegistrationFormWithFollowingInfo(Map<String, String> map) {
+        for(String key: map.keySet()){
+            if (key.equalsIgnoreCase("role")){
+                BrowserUtils.selectByVisibleText(page.selectRole, map.get(key));
+            }else {
+                BrowserUtils.sendKeys(BrowserUtils.getDriver().findElement(By.xpath(
+                        String.format(XPATH_TEMPLATE_INPUT_FIELD, key)
+                )), map.get(key));
+            }
         }
     }
 }

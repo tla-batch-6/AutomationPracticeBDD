@@ -27,3 +27,13 @@ Feature: User Mgt page scenarios
       | Last Name    |
       | Phone Number |
       | E-mail       |
+
+  @US4010
+  Scenario: Add new User to staging table
+    When I fill out user registration form with following info:
+      | First Name   | John                  |
+      | Last Name    | Wick                  |
+      | Phone Number | 666-666-6666          |
+      | E-mail       | j.wick@contractor.gov |
+      | role         | Mentor                |
+    And I click a button "Submit"

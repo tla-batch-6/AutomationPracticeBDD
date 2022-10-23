@@ -16,4 +16,7 @@ public class UserMgtPage {
 
     @FindBy(id = "practice-form")
     public WebElement loginBtn;
+
+    @FindBy(id = "Select-role")
+    public WebElement selectRole;
 }
