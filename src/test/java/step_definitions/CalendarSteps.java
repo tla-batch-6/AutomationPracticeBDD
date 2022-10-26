@@ -28,9 +28,7 @@ public class CalendarSteps implements CommonPage {
     public void i_click_a_button_submit() {
         BrowserUtils.click(
                 BrowserUtils.getDriver().findElement(
-                        By.xpath(String.format(XPATH_TEMPLATE_BUTTON, "Submit"))
-                )
-        );
+                        By.xpath(String.format(XPATH_TEMPLATE_BUTTON, "Submit"))));
     }
 
     @Then("text will display {int} day difference")

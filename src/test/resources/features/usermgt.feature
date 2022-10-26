@@ -9,7 +9,7 @@ Feature: User Mgt page scenarios
   Scenario: User-Mgt page title test
     Then Verify title of the page is Register New User
 
-  @US4002
+  @US4002 @smoke
   Scenario: Login button test
     Then Verify Login button is present
 

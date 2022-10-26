@@ -3,7 +3,7 @@ Feature: Pop-Up page tests
     Given I open url of homepage
     When I click nav button "Pop-Up"
 
-  @US801
+  @US801 @smoke
   Scenario: Verify "New Message" header is displayed
     And I click a button "Message"
     Then Verify header New Message is displayed
